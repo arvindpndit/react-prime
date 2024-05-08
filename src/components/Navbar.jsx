@@ -1,6 +1,7 @@
 import SearchBar from "./SearchBar";
 
 const Navbar = () => {
+  console.log("navbar re-renders");
   return (
     <div className="flex p-4 border rounded-2xl mt-2 bg-gray-50 hover:bg-gray-100 container max-w-screen-lg mx-auto justify-between items-center ">
       <h2 className="text-xl text-gray-700 font-semibold">Prime video</h2>

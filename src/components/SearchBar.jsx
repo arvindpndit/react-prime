@@ -1,4 +1,5 @@
 const SearchBar = () => {
+  console.log("searchbar re-renders");
   return (
     <div className="flex items-center">
       <input
