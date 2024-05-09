@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Counter = () => {
   //let counter = 0;
@@ -7,6 +7,19 @@ const Counter = () => {
   const handleIncBtn = () => {
     setCounter(counter + 1);
     console.log(counter);
+  };
+
+  useEffect(() => {
+    //effect fn
+
+    const data = fetchMoviesData();
+    console.log(data);
+  }, []);
+
+  const fetchMoviesData = async () => {
+    //const response = await fetch("kfdjfksdjfkljsdflj");
+    //const json = await response.json();
+    return [{ name: "dune" }, { name: "dune -2" }, { name: "abc" }];
   };
 
   console.log("counter re-renders");
