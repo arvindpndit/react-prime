@@ -1,12 +1,13 @@
 import Navbar from "./components/Navbar";
 import Counter from "./components/Counter";
+import MoviesContainer from "./components/MoviesContainer";
 
 const App = () => {
   console.log("App re-render");
   return (
-    <div className="p-10">
+    <div className="container max-w-screen-lg mx-auto">
       <Navbar />
-      <Counter />
+      <MoviesContainer />
     </div>
   );
 };
