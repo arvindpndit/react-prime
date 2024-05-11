@@ -1,32 +1,8 @@
-import { useEffect, useState } from "react";
+import useFetchMovies from "../hooks/useFetchMovies";
 
 const MoviesContainer = () => {
-  const [movies, setMovies] = useState(null);
-  useEffect(() => {
-    async function getMovies() {
-      const data = await fetchMoviesData();
-      setMovies(data.results);
-      console.log(data);
-    }
-    getMovies();
-  }, []);
+  const movies = useFetchMovies();
 
-  async function fetchMoviesData() {
-    const url =
-      "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMDlmN2U2ZTJmNDJlODZkMjU4Y2MyZmRmMDZhNzQ2OSIsInN1YiI6IjY1MzRjMTRkOTFmMGVhMDEzODg4NjBjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oZdu1hXdryATPGDCC1s8jFU-riobmH_soYDU4qf2-1E",
-      },
-    };
-
-    const response = await fetch(url, options);
-    const json = await response.json();
-    return json;
-  }
   return (
     <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {movies &&
