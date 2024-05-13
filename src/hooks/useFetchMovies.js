@@ -29,7 +29,7 @@ const useFetchMovies = () => {
     return json;
   }
 
-  return movies;
+  return { movies, setMovies };
 };
 
 export default useFetchMovies;

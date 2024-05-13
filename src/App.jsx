@@ -1,13 +1,15 @@
 import Navbar from "./components/Navbar";
 import Counter from "./components/Counter";
 import MoviesContainer from "./components/MoviesContainer";
+import useFetchMovies from "./hooks/useFetchMovies";
 
 const App = () => {
   console.log("App re-render");
+  const { movies, setMovies } = useFetchMovies();
   return (
     <div className="container max-w-screen-lg mx-auto">
-      <Navbar />
-      <MoviesContainer />
+      <Navbar movies={movies} setMovies={setMovies} />
+      <MoviesContainer movies={movies} />
     </div>
   );
 };
