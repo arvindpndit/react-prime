@@ -1,7 +1,7 @@
-const SearchBar = ({ movies, setMovies }) => {
+const SearchBar = ({ movies, setMovies, allMoviesForFiltering }) => {
   console.log("searchbar re-renders");
   const handleFilteredMovies = (filteredMoviesName) => {
-    const filteredMovies = movies.filter((movie) => {
+    const filteredMovies = allMoviesForFiltering.filter((movie) => {
       return movie.original_title
         .toLowerCase()
         .includes(filteredMoviesName.toLowerCase());

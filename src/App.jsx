@@ -5,10 +5,14 @@ import useFetchMovies from "./hooks/useFetchMovies";
 
 const App = () => {
   console.log("App re-render");
-  const { movies, setMovies } = useFetchMovies();
+  const { movies, setMovies, allMoviesForFiltering } = useFetchMovies();
   return (
     <div className="container max-w-screen-lg mx-auto">
-      <Navbar movies={movies} setMovies={setMovies} />
+      <Navbar
+        movies={movies}
+        setMovies={setMovies}
+        allMoviesForFiltering={allMoviesForFiltering}
+      />
       <MoviesContainer movies={movies} />
     </div>
   );

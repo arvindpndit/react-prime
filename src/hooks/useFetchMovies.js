@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 
 const useFetchMovies = () => {
   const [movies, setMovies] = useState(null);
+  const [allMoviesForFiltering, setAllMoviesForFiltering] = useState(null);
 
   useEffect(() => {
     async function getMovies() {
       const data = await fetchMoviesData();
       setMovies(data.results);
+      setAllMoviesForFiltering(data.results);
       console.log(data);
     }
     getMovies();
@@ -29,7 +31,7 @@ const useFetchMovies = () => {
     return json;
   }
 
-  return { movies, setMovies };
+  return { movies, setMovies, allMoviesForFiltering };
 };
 
 export default useFetchMovies;
